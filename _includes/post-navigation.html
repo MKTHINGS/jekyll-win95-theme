@@ -1,0 +1,39 @@
+<div class="post-navigation win95-group-box">
+  <div class="win95-group-box-title">{{ site.data.i18n[page.lang].blog.navigation }}</div>
+  <div class="win95-group-box-content">
+    <div class="win95-toolbar">
+      <div class="win95-toolbar-buttons">
+        {% if page.previous.url %}
+          {% assign prev_post = page.previous %}
+          <a href="{{ prev_post.url | relative_url }}" class="win95-button win95-nav-button prev-post">
+            <img src="{{ site.baseurl }}/assets/images/icons/arrow-left.png" alt="Previous" class="win95-icon">
+            {{ site.data.i18n[page.lang].pagination.previous }}: {{ prev_post.title | truncate: 30 }}
+          </a>
+        {% else %}
+          <button class="win95-button win95-nav-button prev-post disabled" disabled>
+            <img src="{{ site.baseurl }}/assets/images/icons/arrow-left.png" alt="Previous" class="win95-icon">
+            {{ site.data.i18n[page.lang].pagination.previous }}
+          </button>
+        {% endif %}
+        
+        <a href="{{ site.baseurl }}/{% if page.lang != site.default_lang %}{{ page.lang }}/{% endif %}blog/" class="win95-button win95-nav-button all-posts">
+          <img src="{{ site.baseurl }}/assets/images/icons/list.png" alt="All Posts" class="win95-icon">
+          {{ site.data.i18n[page.lang].blog.all_posts }}
+        </a>
+        
+        {% if page.next.url %}
+          {% assign next_post = page.next %}
+          <a href="{{ next_post.url | relative_url }}" class="win95-button win95-nav-button next-post">
+            {{ site.data.i18n[page.lang].pagination.next }}: {{ next_post.title | truncate: 30 }}
+            <img src="{{ site.baseurl }}/assets/images/icons/arrow-right.png" alt="Next" class="win95-icon">
+          </a>
+        {% else %}
+          <button class="win95-button win95-nav-button next-post disabled" disabled>
+            {{ site.data.i18n[page.lang].pagination.next }}
+            <img src="{{ site.baseurl }}/assets/images/icons/arrow-right.png" alt="Next" class="win95-icon">
+          </button>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

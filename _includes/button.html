@@ -1,0 +1,25 @@
+{% comment %}
+Windows 95 Button Component
+Parameters:
+- text: Button text
+- id: Unique identifier for the button
+- type: Button type (button, submit, reset)
+- disabled: Whether the button is disabled
+- class: Additional CSS classes
+- onclick: JavaScript onclick handler
+{% endcomment %}
+
+{% assign button_id = include.id | default: "win95-button-" | append: forloop.index %}
+{% assign button_type = include.type | default: "button" %}
+{% assign disabled = include.disabled | default: false %}
+
+<button id="{{ button_id }}" 
+        type="{{ button_type }}" 
+        class="win95-button {% if include.class %}{{ include.class }}{% endif %}" 
+        {% if disabled %}disabled{% endif %}
+        {% if include.onclick %}onclick="{{ include.onclick }}"{% endif %}>
+  {% if include.icon %}
+    <img src="{{ site.baseurl }}/assets/images/icons/{{ include.icon }}" alt="" width="16" height="16" class="win95-button-icon">
+  {% endif %}
+  <span class="win95-button-text">{{ include.text }}</span>
+</button>

@@ -1,0 +1,60 @@
+{% comment %}
+Windows 95 Window Component
+Parameters:
+- title: Window title
+- id: Unique identifier for the window
+- minimizable: Whether the window can be minimized (default: true)
+- maximizable: Whether the window can be maximized (default: true)
+- closable: Whether the window can be closed (default: true)
+- draggable: Whether the window can be dragged (default: true)
+- resizable: Whether the window can be resized (default: false)
+- width: Initial width of the window (default: auto)
+- height: Initial height of the window (default: auto)
+{% endcomment %}
+
+{% assign window_id = include.id | default: "win95-window-" | append: forloop.index %}
+{% assign minimizable = include.minimizable | default: true %}
+{% assign maximizable = include.maximizable | default: true %}
+{% assign closable = include.closable | default: true %}
+{% assign draggable = include.draggable | default: true %}
+{% assign resizable = include.resizable | default: false %}
+{% assign width = include.width | default: "auto" %}
+{% assign height = include.height | default: "auto" %}
+
+<div id="{{ window_id }}" class="win95-window {% if include.class %}{{ include.class }}{% endif %}" 
+     data-draggable="{{ draggable }}" 
+     data-resizable="{{ resizable }}"
+     style="width: {{ width }}; height: {{ height }};">
+  <div class="win95-title-bar">
+    <div class="win95-title-bar-text">
+      {{ include.title }}
+    </div>
+    <div class="win95-title-bar-controls">
+      {% if minimizable %}
+        <button class="win95-minimize" aria-label="{{ site.data.i18n[page.lang].ui.minimize }}">
+          <span>_</span>
+        </button>
+      {% endif %}
+      
+      {% if maximizable %}
+        <button class="win95-maximize" aria-label="{{ site.data.i18n[page.lang].ui.maximize }}">
+          <span>□</span>
+        </button>
+      {% endif %}
+      
+      {% if closable %}
+        <button class="win95-close" aria-label="{{ site.data.i18n[page.lang].ui.close }}">
+          <span>×</span>
+        </button>
+      {% endif %}
+    </div>
+  </div>
+  
+  <div class="win95-window-body">
+    {{ include.content }}
+  </div>
+  
+  {% if resizable %}
+    <div class="win95-resize-handle"></div>
+  {% endif %}
+</div>

@@ -1,0 +1,17 @@
+{% assign tags = site.posts | where: "lang", include.lang | map: "tags" | flatten | uniq | sort %}
+
+<div class="tags-list win95-group-box">
+  <div class="win95-group-box-title">{{ site.data.i18n[include.lang].blog.tags }}</div>
+  <div class="win95-group-box-content">
+    <div class="win95-tags-container">
+      {% for tag in tags %}
+        {% assign tag_posts = site.posts | where: "lang", include.lang | where_exp: "post", "post.tags contains tag" %}
+        <a href="{{ site.baseurl }}/{% if include.lang != site.default_lang %}{{ include.lang }}/{% endif %}tags/{{ tag | slugify }}/" 
+           class="win95-tag">
+          <img src="{{ site.baseurl }}/assets/images/icons/tag.png" alt="Tag" class="win95-icon">
+          {{ tag }} ({{ tag_posts.size }})
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>

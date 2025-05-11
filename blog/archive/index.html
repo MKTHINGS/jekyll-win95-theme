@@ -1,0 +1,100 @@
+---
+layout: default
+title: Blog Archive
+lang: en
+permalink: /blog/archive/
+---
+
+<div class="win95-window blog-archive">
+  <div class="win95-title-bar">
+    <div class="win95-title-bar-text">
+      {{ site.data.i18n[page.lang].blog.archive }}
+    </div>
+    <div class="win95-title-bar-controls">
+      <button aria-label="{{ site.data.i18n[page.lang].ui.minimize }}">
+        <span>_</span>
+      </button>
+      <button aria-label="{{ site.data.i18n[page.lang].ui.maximize }}">
+        <span>□</span>
+      </button>
+      <button aria-label="{{ site.data.i18n[page.lang].ui.close }}">
+        <span>×</span>
+      </button>
+    </div>
+  </div>
+  
+  <div class="win95-window-body">
+    <div class="win95-toolbar blog-toolbar">
+      <div class="win95-toolbar-buttons">
+        <a href="{{ site.baseurl }}/blog/" class="win95-button">
+          <img src="{{ site.baseurl }}/assets/images/icons/list.png" alt="All Posts" class="win95-icon">
+          {{ site.data.i18n[page.lang].blog.all_posts }}
+        </a>
+        <a href="{{ site.baseurl }}/blog/archive/" class="win95-button active">
+          <img src="{{ site.baseurl }}/assets/images/icons/archive.png" alt="Archive" class="win95-icon">
+          {{ site.data.i18n[page.lang].blog.archive }}
+        </a>
+      </div>
+    </div>
+    
+    <div class="blog-content">
+      <div class="blog-main">
+        <div class="archive-container">
+          {% assign posts = site.posts | where: "lang", page.lang | sort: 'date' | reverse %}
+          {% assign dates = posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+          
+          {% for year in dates %}
+            <div class="win95-group-box year-group">
+              <div class="win95-group-box-title">{{ year.name }}</div>
+              <div class="win95-group-box-content">
+                {% assign months = year.items | group_by_exp: "post", "post.date | date: '%m'" %}
+                
+                {% for month in months %}
+                  {% assign month_name = site.data.i18n[page.lang].date.months[month.name | minus: 1] %}
+                  <div class="win95-folder month-folder">
+                    <div class="win95-folder-header" onclick="toggleFolder(this)">
+                      <img src="{{ site.baseurl }}/assets/images/icons/folder-closed.png" alt="Folder" class="win95-icon folder-icon">
+                      <span class="folder-name">{{ month_name }}</span>
+                      <span class="post-count">({{ month.items.size }})</span>
+                    </div>
+                    <div class="win95-folder-content" style="display: none;">
+                      <ul class="win95-list">
+                        {% for post in month.items %}
+                          <li class="win95-list-item">
+                            <img src="{{ site.baseurl }}/assets/images/icons/document.png" alt="Document" class="win95-icon">
+                            <a href="{{ post.url | relative_url }}" class="win95-link">{{ post.title }}</a>
+                            <span class="post-date">{{ post.date | date: "%d %b %Y" }}</span>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      
+      <div class="blog-sidebar">
+        {% include categories-list.html lang=page.lang %}
+        {% include tags-list.html lang=page.lang %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleFolder(header) {
+    const folderContent = header.nextElementSibling;
+    const folderIcon = header.querySelector('.folder-icon');
+    
+    if (folderContent.style.display === 'none') {
+      folderContent.style.display = 'block';
+      folderIcon.src = "{{ site.baseurl }}/assets/images/icons/folder-open.png";
+    } else {
+      folderContent.style.display = 'none';
+      folderIcon.src = "{{ site.baseurl }}/assets/images/icons/folder-closed.png";
+    }
+  }
+</script>

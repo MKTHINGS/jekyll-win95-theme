@@ -1,0 +1,104 @@
+/**
+ * Windows 95 Style Dropdown Menu
+ * This CSS file provides styling for Windows 95-inspired dropdown menus
+ */
+
+/* Base dropdown container */
+.win95-dropdown {
+  position: relative;
+  display: inline-block;
+  font-family: "MS Sans Serif", "Micross", Arial, sans-serif;
+  font-size: 11px;
+}
+
+/* Dropdown toggle button */
+.win95-button {
+  display: flex;
+  align-items: center;
+  background-color: #c3c3c3;
+  border: 2px solid;
+  border-color: #fdffff #818181 #818181 #fdffff;
+  box-shadow: 1px 1px 0 0 #000000;
+  color: #000000;
+  padding: 4px 8px;
+  cursor: pointer;
+  text-align: left;
+  min-width: 120px;
+}
+
+.win95-button:active,
+.win95-button.active {
+  border-color: #818181 #fdffff #fdffff #818181;
+  box-shadow: inset 1px 1px 0 0 #000000;
+}
+
+.win95-button:focus {
+  outline: 1px dotted #000000;
+  outline-offset: -5px;
+}
+
+/* Dropdown arrow */
+.dropdown-arrow {
+  margin-left: auto;
+  font-size: 8px;
+}
+
+/* Dropdown menu */
+.win95-dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #c3c3c3;
+  min-width: 160px;
+  border: 2px solid;
+  border-color: #fdffff #818181 #818181 #fdffff;
+  box-shadow: 1px 1px 0 0 #000000;
+  z-index: 1000;
+  padding: 2px;
+}
+
+.win95-dropdown-menu.show {
+  display: block;
+}
+
+/* Dropdown items */
+.win95-dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+}
+
+.win95-dropdown-item:hover {
+  background-color: #0827f5;
+  color: #fdffff;
+}
+
+.win95-dropdown-item.active {
+  background-color: #c3c3c3;
+  color: #000000;
+  font-weight: bold;
+}
+
+/* Checkmark for active item */
+.checkmark {
+  margin-left: auto;
+}
+
+/* Language selector specific styles */
+.language-selector .win95-button {
+  display: flex;
+  align-items: center;
+}
+
+.language-selector .win95-button img {
+  margin-right: 6px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .win95-dropdown-menu {
+    right: 0;
+  }
+}

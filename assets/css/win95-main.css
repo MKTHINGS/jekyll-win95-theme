@@ -1,0 +1,272 @@
+/**
+ * Windows 95 Jekyll Theme - Main Stylesheet
+ * This CSS file provides the core Windows 95 UI styling
+ */
+
+/* Base styles and variables */
+:root {
+  /* Windows 95 color palette */
+  --win95-light-gray: #c3c3c3;
+  --win95-dark-gray: #818181;
+  --win95-white: #fdffff;
+  --win95-black: #000000;
+  --win95-blue: #0827f5;
+  --win95-teal: #008080;
+  --win95-red: #ff3300;
+  --win95-green: #66cc33;
+  --win95-yellow: #ffcc00;
+  
+  /* Spacing */
+  --win95-spacing-unit: 4px;
+  --win95-border-width: 2px;
+}
+
+/* Base elements */
+body.win95-body {
+  font-family: "MS Sans Serif", "Micross", Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--win95-black);
+  background-color: var(--win95-teal);
+  margin: 0;
+  padding: var(--win95-spacing-unit);
+}
+
+/* Container */
+.win95-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--win95-spacing-unit);
+}
+
+/* Windows */
+.win95-window {
+  background-color: var(--win95-light-gray);
+  border: var(--win95-border-width) solid;
+  border-color: var(--win95-white) var(--win95-dark-gray) var(--win95-dark-gray) var(--win95-white);
+  box-shadow: 1px 1px 0 0 var(--win95-black);
+  margin-bottom: calc(var(--win95-spacing-unit) * 4);
+}
+
+/* Title bar */
+.win95-title-bar {
+  background-color: var(--win95-blue);
+  color: var(--win95-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(var(--win95-spacing-unit) / 2) var(--win95-spacing-unit);
+  font-weight: bold;
+}
+
+.win95-title-bar-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.win95-title-bar-controls {
+  display: flex;
+  gap: var(--win95-spacing-unit);
+}
+
+.win95-title-bar-controls button {
+  width: 16px;
+  height: 14px;
+  background-color: var(--win95-light-gray);
+  border: 1px solid;
+  border-color: var(--win95-white) var(--win95-black) var(--win95-black) var(--win95-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.win95-title-bar-controls button:active {
+  border-color: var(--win95-black) var(--win95-white) var(--win95-white) var(--win95-black);
+}
+
+/* Window body */
+.win95-window-body {
+  padding: calc(var(--win95-spacing-unit) * 2);
+  background-color: var(--win95-light-gray);
+}
+
+/* Buttons */
+.win95-button {
+  background-color: var(--win95-light-gray);
+  border: var(--win95-border-width) solid;
+  border-color: var(--win95-white) var(--win95-dark-gray) var(--win95-dark-gray) var(--win95-white);
+  box-shadow: 1px 1px 0 0 var(--win95-black);
+  color: var(--win95-black);
+  padding: calc(var(--win95-spacing-unit) / 2) var(--win95-spacing-unit);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.win95-button:active,
+.win95-button.active {
+  border-color: var(--win95-dark-gray) var(--win95-white) var(--win95-white) var(--win95-dark-gray);
+  box-shadow: inset 1px 1px 0 0 var(--win95-black);
+  padding-top: calc(var(--win95-spacing-unit) / 2 + 1px);
+  padding-left: calc(var(--win95-spacing-unit) + 1px);
+}
+
+.win95-button:focus {
+  outline: 1px dotted var(--win95-black);
+  outline-offset: -4px;
+}
+
+/* Menu bar */
+.win95-menu-bar {
+  display: flex;
+  background-color: var(--win95-light-gray);
+  border-bottom: 1px solid var(--win95-dark-gray);
+  padding: var(--win95-spacing-unit) 0;
+}
+
+.win95-menu-item {
+  padding: calc(var(--win95-spacing-unit) / 2) var(--win95-spacing-unit);
+  text-decoration: none;
+  color: var(--win95-black);
+}
+
+.win95-menu-item:hover,
+.win95-menu-item.active {
+  background-color: var(--win95-blue);
+  color: var(--win95-white);
+}
+
+/* Site header */
+.site-header {
+  margin-bottom: calc(var(--win95-spacing-unit) * 4);
+}
+
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.language-selector-container {
+  margin-left: auto;
+}
+
+/* Site content */
+.site-content {
+  min-height: 300px;
+}
+
+/* Site footer */
+.site-footer {
+  margin-top: calc(var(--win95-spacing-unit) * 4);
+}
+
+.win95-footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.win95-footer-links {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--win95-spacing-unit) * 2);
+}
+
+/* Start button */
+.win95-start-button {
+  display: flex;
+  align-items: center;
+  background-color: var(--win95-light-gray);
+  border: var(--win95-border-width) solid;
+  border-color: var(--win95-white) var(--win95-dark-gray) var(--win95-dark-gray) var(--win95-white);
+  padding: calc(var(--win95-spacing-unit) / 2) var(--win95-spacing-unit);
+  cursor: pointer;
+}
+
+.win95-start-button img {
+  margin-right: var(--win95-spacing-unit);
+}
+
+.win95-start-button:active,
+.win95-start-button.active {
+  border-color: var(--win95-dark-gray) var(--win95-white) var(--win95-white) var(--win95-dark-gray);
+}
+
+/* Taskbar items */
+.win95-taskbar-item {
+  background-color: var(--win95-light-gray);
+  border: 1px solid;
+  border-color: var(--win95-dark-gray) var(--win95-white) var(--win95-white) var(--win95-dark-gray);
+  padding: calc(var(--win95-spacing-unit) / 2) var(--win95-spacing-unit);
+}
+
+.win95-taskbar-clock {
+  background-color: var(--win95-light-gray);
+  border: 1px solid;
+  border-color: var(--win95-dark-gray) var(--win95-white) var(--win95-white) var(--win95-dark-gray);
+  padding: calc(var(--win95-spacing-unit) / 2) var(--win95-spacing-unit);
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Window states */
+.win95-window.minimized {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s;
+}
+
+.win95-window.maximized {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  margin: 0;
+}
+
+.win95-window.closed {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .site-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .win95-menu-bar {
+    flex-wrap: wrap;
+  }
+  
+  .language-selector-container {
+    margin: var(--win95-spacing-unit) 0 0;
+    align-self: flex-end;
+  }
+  
+  .win95-footer-content {
+    flex-direction: column;
+    gap: calc(var(--win95-spacing-unit) * 2);
+  }
+}
+
+/* Multilingual specific styles */
+[lang] {
+  unicode-bidi: isolate;
+}
+
+/* RTL language support */
+[lang="ar"],
+[lang="he"] {
+  direction: rtl;
+}

@@ -1,0 +1,232 @@
+/**
+ * Windows 95 Jekyll Theme - Animations
+ * This CSS file provides animations for Windows 95-inspired UI elements
+ */
+
+/* Window opening animation */
+@keyframes win95-window-open {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.win95-window-opening {
+  animation: win95-window-open 0.2s ease-out;
+}
+
+/* Window closing animation */
+@keyframes win95-window-close {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+.win95-window-closing {
+  animation: win95-window-close 0.2s ease-in;
+}
+
+/* Window minimizing animation */
+@keyframes win95-window-minimize {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.5) translateY(100%);
+  }
+}
+
+.win95-window-minimizing {
+  animation: win95-window-minimize 0.2s ease-in;
+}
+
+/* Window maximizing animation */
+@keyframes win95-window-maximize {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.win95-window-maximizing {
+  animation: win95-window-maximize 0.2s ease-out;
+}
+
+/* Button click animation */
+@keyframes win95-button-click {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.win95-button-clicking {
+  animation: win95-button-click 0.2s ease-in-out;
+}
+
+/* Start menu animation */
+@keyframes win95-start-menu-open {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.win95-start-menu.show {
+  animation: win95-start-menu-open 0.2s ease-out;
+}
+
+/* Dialog animation */
+@keyframes win95-dialog-open {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.win95-dialog-opening {
+  animation: win95-dialog-open 0.3s ease-out;
+}
+
+/* Alert animation */
+@keyframes win95-alert-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.win95-alert-appearing {
+  animation: win95-alert-appear 0.3s ease-out;
+}
+
+/* Loading animation */
+@keyframes win95-loading {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 0;
+  }
+}
+
+.win95-loading {
+  background-image: linear-gradient(
+    45deg,
+    var(--win95-light-gray) 25%,
+    var(--win95-dark-gray) 25%,
+    var(--win95-dark-gray) 50%,
+    var(--win95-light-gray) 50%,
+    var(--win95-light-gray) 75%,
+    var(--win95-dark-gray) 75%,
+    var(--win95-dark-gray)
+  );
+  background-size: 20px 20px;
+  animation: win95-loading 1s linear infinite;
+}
+
+/* Blinking cursor animation */
+@keyframes win95-cursor-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.win95-cursor-blink {
+  animation: win95-cursor-blink 1s step-end infinite;
+}
+
+/* Hourglass cursor animation */
+@keyframes win95-hourglass {
+  0%, 100% {
+    background-image: url('../images/icons/hourglass-1.png');
+  }
+  50% {
+    background-image: url('../images/icons/hourglass-2.png');
+  }
+}
+
+.win95-hourglass {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  animation: win95-hourglass 1s step-end infinite;
+}
+
+/* Progress bar animation */
+@keyframes win95-progress {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 0;
+  }
+}
+
+.win95-progress-bar {
+  height: 16px;
+  background-color: var(--win95-white);
+  border: var(--win95-border-width) solid;
+  border-color: var(--win95-dark-gray) var(--win95-white) var(--win95-white) var(--win95-dark-gray);
+  box-shadow: inset 1px 1px 0 0 var(--win95-black);
+  position: relative;
+  overflow: hidden;
+}
+
+.win95-progress-bar-fill {
+  height: 100%;
+  background-image: linear-gradient(
+    45deg,
+    var(--win95-blue) 25%,
+    var(--win95-light-blue) 25%,
+    var(--win95-light-blue) 50%,
+    var(--win95-blue) 50%,
+    var(--win95-blue) 75%,
+    var(--win95-light-blue) 75%,
+    var(--win95-light-blue)
+  );
+  background-size: 30px 30px;
+  animation: win95-progress 1s linear infinite;
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

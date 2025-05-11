@@ -1,0 +1,315 @@
+/**
+ * Windows 95 Jekyll Theme - Layout Styling
+ * This CSS file provides layout styling for Windows 95-inspired UI
+ */
+
+/* Desktop layout */
+.win95-desktop {
+  min-height: 100vh;
+  padding: calc(var(--win95-spacing-unit) * 2);
+  position: relative;
+}
+
+/* Taskbar */
+.win95-taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  background-color: var(--win95-light-gray);
+  border-top: var(--win95-border-width) solid var(--win95-white);
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  z-index: 1000;
+}
+
+.win95-taskbar-start {
+  margin-right: 4px;
+}
+
+.win95-taskbar-items {
+  display: flex;
+  flex: 1;
+  overflow-x: auto;
+  gap: 2px;
+}
+
+.win95-taskbar-item {
+  background-color: var(--win95-light-gray);
+  border: var(--win95-border-width) solid;
+  border-color: var(--win95-white) var(--win95-dark-gray) var(--win95-dark-gray) var(--win95-white);
+  padding: 2px 8px;
+  display: flex;
+  align-items: center;
+  min-width: 120px;
+  max-width: 200px;
+  height: 22px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.win95-taskbar-item.active {
+  border-color: var(--win95-dark-gray) var(--win95-white) var(--win95-white) var(--win95-dark-gray);
+}
+
+.win95-taskbar-item img {
+  margin-right: 4px;
+}
+
+.win95-taskbar-tray {
+  display: flex;
+  align-items: center;
+  border-left: 1px solid var(--win95-dark-gray);
+  margin-left: 4px;
+  padding-left: 4px;
+}
+
+.win95-taskbar-clock {
+  background-color: var(--win95-light-gray);
+  border: 1px solid;
+  border-color: var(--win95-dark-gray) var(--win95-white) var(--win95-white) var(--win95-dark-gray);
+  padding: 2px 8px;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* Start menu */
+.win95-start-menu {
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  width: 200px;
+  background-color: var(--win95-light-gray);
+  border: var(--win95-border-width) solid;
+  border-color: var(--win95-white) var(--win95-dark-gray) var(--win95-dark-gray) var(--win95-white);
+  box-shadow: 2px 2px 0 0 var(--win95-black);
+  z-index: 1001;
+  display: none;
+}
+
+.win95-start-menu.show {
+  display: block;
+}
+
+.win95-start-menu-header {
+  background-color: var(--win95-dark-gray);
+  color: var(--win95-white);
+  padding: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.win95-start-menu-title {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 8px 4px;
+  font-size: 18px;
+}
+
+.win95-start-menu-items {
+  padding: 2px;
+}
+
+.win95-start-menu-item {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.win95-start-menu-item:hover {
+  background-color: var(--win95-blue);
+  color: var(--win95-white);
+}
+
+.win95-start-menu-item img {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.win95-start-menu-divider {
+  height: 1px;
+  background-color: var(--win95-dark-gray);
+  margin: 4px 0;
+}
+
+/* Window layout */
+.win95-window {
+  position: relative;
+  min-width: 200px;
+  min-height: 100px;
+}
+
+.win95-window.draggable .win95-title-bar {
+  cursor: move;
+}
+
+.win95-window.resizable {
+  resize: both;
+  overflow: auto;
+}
+
+/* Grid system */
+.win95-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: calc(var(--win95-spacing-unit) * 2);
+}
+
+.win95-col-1 { grid-column: span 1; }
+.win95-col-2 { grid-column: span 2; }
+.win95-col-3 { grid-column: span 3; }
+.win95-col-4 { grid-column: span 4; }
+.win95-col-5 { grid-column: span 5; }
+.win95-col-6 { grid-column: span 6; }
+.win95-col-7 { grid-column: span 7; }
+.win95-col-8 { grid-column: span 8; }
+.win95-col-9 { grid-column: span 9; }
+.win95-col-10 { grid-column: span 10; }
+.win95-col-11 { grid-column: span 11; }
+.win95-col-12 { grid-column: span 12; }
+
+/* Flexbox layouts */
+.win95-flex {
+  display: flex;
+}
+
+.win95-flex-column {
+  flex-direction: column;
+}
+
+.win95-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.win95-justify-start {
+  justify-content: flex-start;
+}
+
+.win95-justify-end {
+  justify-content: flex-end;
+}
+
+.win95-justify-center {
+  justify-content: center;
+}
+
+.win95-justify-between {
+  justify-content: space-between;
+}
+
+.win95-justify-around {
+  justify-content: space-around;
+}
+
+.win95-align-start {
+  align-items: flex-start;
+}
+
+.win95-align-end {
+  align-items: flex-end;
+}
+
+.win95-align-center {
+  align-items: center;
+}
+
+.win95-align-stretch {
+  align-items: stretch;
+}
+
+/* Spacing utilities */
+.win95-m-0 { margin: 0; }
+.win95-m-1 { margin: var(--win95-spacing-unit); }
+.win95-m-2 { margin: calc(var(--win95-spacing-unit) * 2); }
+.win95-m-3 { margin: calc(var(--win95-spacing-unit) * 3); }
+.win95-m-4 { margin: calc(var(--win95-spacing-unit) * 4); }
+
+.win95-mt-0 { margin-top: 0; }
+.win95-mt-1 { margin-top: var(--win95-spacing-unit); }
+.win95-mt-2 { margin-top: calc(var(--win95-spacing-unit) * 2); }
+.win95-mt-3 { margin-top: calc(var(--win95-spacing-unit) * 3); }
+.win95-mt-4 { margin-top: calc(var(--win95-spacing-unit) * 4); }
+
+.win95-mb-0 { margin-bottom: 0; }
+.win95-mb-1 { margin-bottom: var(--win95-spacing-unit); }
+.win95-mb-2 { margin-bottom: calc(var(--win95-spacing-unit) * 2); }
+.win95-mb-3 { margin-bottom: calc(var(--win95-spacing-unit) * 3); }
+.win95-mb-4 { margin-bottom: calc(var(--win95-spacing-unit) * 4); }
+
+.win95-p-0 { padding: 0; }
+.win95-p-1 { padding: var(--win95-spacing-unit); }
+.win95-p-2 { padding: calc(var(--win95-spacing-unit) * 2); }
+.win95-p-3 { padding: calc(var(--win95-spacing-unit) * 3); }
+.win95-p-4 { padding: calc(var(--win95-spacing-unit) * 4); }
+
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+  .win95-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  
+  .win95-col-sm-1 { grid-column: span 1; }
+  .win95-col-sm-2 { grid-column: span 2; }
+  .win95-col-sm-3 { grid-column: span 3; }
+  .win95-col-sm-4 { grid-column: span 4; }
+  .win95-col-sm-5 { grid-column: span 5; }
+  .win95-col-sm-6 { grid-column: span 6; }
+  
+  .win95-flex-sm-column {
+    flex-direction: column;
+  }
+  
+  .win95-taskbar {
+    height: auto;
+  }
+  
+  .win95-taskbar-items {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .win95-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .win95-col-xs-1 { grid-column: span 1; }
+  .win95-col-xs-2 { grid-column: span 2; }
+  .win95-col-xs-3 { grid-column: span 3; }
+  .win95-col-xs-4 { grid-column: span 4; }
+  
+  .win95-window {
+    min-width: 100%;
+  }
+}
+
+/* Print styles */
+@media print {
+  .win95-taskbar,
+  .win95-title-bar-controls,
+  .win95-start-menu {
+    display: none !important;
+  }
+  
+  .win95-window {
+    border: 1px solid #000;
+    box-shadow: none;
+  }
+  
+  .win95-title-bar {
+    background-color: #fff;
+    color: #000;
+    border-bottom: 1px solid #000;
+  }
+  
+  body {
+    background-color: #fff;
+  }
+}

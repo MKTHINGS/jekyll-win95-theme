@@ -1,0 +1,29 @@
+<div class="win95-language-selector">
+  <div class="win95-dropdown">
+    <button class="win95-btn win95-dropdown-toggle" id="language-dropdown-toggle">
+      {{ site.data.i18n[page.lang].language_name }}
+      <span class="win95-dropdown-arrow">▼</span>
+    </button>
+    <div class="win95-dropdown-menu" id="language-dropdown-menu">
+      {% for lang in site.available_languages %}
+        {% assign lang_code = lang[0] %}
+        {% assign lang_data = lang[1] %}
+        {% if lang_code != page.lang %}
+          {% if page.namespace %}
+            {% assign lang_url = page.url | replace_first: page.lang, lang_code %}
+          {% else %}
+            {% if page.lang == site.default_lang %}
+              {% assign lang_url = page.url | prepend: '/' | prepend: lang_code %}
+            {% else %}
+              {% assign lang_url = page.url | replace_first: page.lang, lang_code %}
+            {% endif %}
+          {% endif %}
+          <a href="{{ lang_url | relative_url }}" class="win95-dropdown-item">
+            <span class="win95-lang-icon">{{ lang_data.icon }}</span>
+            <span class="win95-lang-name">{{ lang_data.label }}</span>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

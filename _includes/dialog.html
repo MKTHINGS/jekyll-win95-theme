@@ -1,0 +1,64 @@
+{% comment %}
+Windows 95 Dialog Box Component
+Parameters:
+- title: Dialog title
+- id: Unique identifier for the dialog
+- type: Dialog type (info, warning, error, question)
+- buttons: Array of button objects with text and action properties
+- width: Dialog width (default: 300px)
+- modal: Whether the dialog is modal (default: true)
+{% endcomment %}
+
+{% assign dialog_id = include.id | default: "win95-dialog-" | append: forloop.index %}
+{% assign dialog_type = include.type | default: "info" %}
+{% assign width = include.width | default: "300px" %}
+{% assign modal = include.modal | default: true %}
+
+<div id="{{ dialog_id }}" class="win95-dialog win95-dialog-{{ dialog_type }} {% if modal %}win95-modal{% endif %} {% if include.class %}{{ include.class }}{% endif %}" style="width: {{ width }};">
+  <div class="win95-title-bar">
+    <div class="win95-title-bar-text">
+      {{ include.title }}
+    </div>
+    {% unless modal %}
+      <div class="win95-title-bar-controls">
+        <button class="win95-close" aria-label="{{ site.data.i18n[page.lang].ui.close }}">
+          <span>×</span>
+        </button>
+      </div>
+    {% endunless %}
+  </div>
+  
+  <div class="win95-window-body">
+    <div class="win95-dialog-content">
+      {% if dialog_type == "info" %}
+        <div class="win95-dialog-icon win95-dialog-icon-info"></div>
+      {% elsif dialog_type == "warning" %}
+        <div class="win95-dialog-icon win95-dialog-icon-warning"></div>
+      {% elsif dialog_type == "error" %}
+        <div class="win95-dialog-icon win95-dialog-icon-error"></div>
+      {% elsif dialog_type == "question" %}
+        <div class="win95-dialog-icon win95-dialog-icon-question"></div>
+      {% endif %}
+      
+      <div class="win95-dialog-message">
+        {{ include.content }}
+      </div>
+    </div>
+    
+    <div class="win95-dialog-buttons">
+      {% if include.buttons %}
+        {% for button in include.buttons %}
+          <button class="win95-button {% if button.primary %}win95-button-primary{% endif %}" 
+                  onclick="{{ button.action }}">
+            {{ button.text }}
+          </button>
+        {% endfor %}
+      {% else %}
+        <button class="win95-button win95-button-primary" 
+                onclick="document.getElementById('{{ dialog_id }}').style.display = 'none';">
+          {{ site.data.i18n[page.lang].buttons.ok }}
+        </button>
+      {% endif %}
+    </div>
+  </div>
+</div>

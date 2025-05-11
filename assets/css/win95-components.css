@@ -1,0 +1,422 @@
+/**
+ * Windows 95 Jekyll Theme - Components Styling
+ * This CSS file provides styling for Windows 95-inspired UI components
+ */
+
+/* Windows */
+.win95-window {
+  background-color: var(--win95-light-gray);
+  border: var(--win95-border-width) solid;
+  border-color: var(--win95-white) var(--win95-dark-gray) var(--win95-dark-gray) var(--win95-white);
+  box-shadow: 1px 1px 0 0 var(--win95-black);
+  margin-bottom: calc(var(--win95-spacing-unit) * 4);
+  position: relative;
+}
+
+/* Title bar */
+.win95-title-bar {
+  background-color: var(--win95-blue);
+  color: var(--win95-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(var(--win95-spacing-unit) / 2) var(--win95-spacing-unit);
+  font-weight: bold;
+  user-select: none;
+}
+
+.win95-title-bar-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.win95-title-bar-controls {
+  display: flex;
+  gap: var(--win95-spacing-unit);
+}
+
+.win95-title-bar-controls button {
+  width: 16px;
+  height: 14px;
+  background-color: var(--win95-light-gray);
+  border: 1px solid;
+  border-color: var(--win95-white) var(--win95-black) var(--win95-black) var(--win95-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.win95-title-bar-controls button:active {
+  border-color: var(--win95-black) var(--win95-white) var(--win95-white) var(--win95-black);
+}
+
+/* Window body */
+.win95-window-body {
+  padding: calc(var(--win95-spacing-unit) * 2);
+  background-color: var(--win95-light-gray);
+}
+
+/* Buttons */
+.win95-button {
+  background-color: var(--win95-light-gray);
+  border: var(--win95-border-width) solid;
+  border-color: var(--win95-white) var(--win95-dark-gray) var(--win95-dark-gray) var(--win95-white);
+  box-shadow: 1px 1px 0 0 var(--win95-black);
+  color: var(--win95-black);
+  padding: calc(var(--win95-spacing-unit) / 2) var(--win95-spacing-unit);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 75px;
+  min-height: 23px;
+  text-align: center;
+}
+
+.win95-button:active,
+.win95-button.active {
+  border-color: var(--win95-dark-gray) var(--win95-white) var(--win95-white) var(--win95-dark-gray);
+  box-shadow: inset 1px 1px 0 0 var(--win95-black);
+  padding-top: calc(var(--win95-spacing-unit) / 2 + 1px);
+  padding-left: calc(var(--win95-spacing-unit) + 1px);
+}
+
+.win95-button:focus {
+  outline: 1px dotted var(--win95-black);
+  outline-offset: -4px;
+}
+
+.win95-button:disabled {
+  color: var(--win95-dark-gray);
+  text-shadow: 1px 1px 0 var(--win95-white);
+  cursor: default;
+}
+
+.win95-button-icon {
+  margin-right: var(--win95-spacing-unit);
+}
+
+/* Primary button */
+.win95-button-primary {
+  font-weight: bold;
+}
+
+/* Dialog */
+.win95-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  min-width: 250px;
+  max-width: 80%;
+}
+
+.win95-dialog-content {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: calc(var(--win95-spacing-unit) * 3);
+}
+
+.win95-dialog-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: calc(var(--win95-spacing-unit) * 2);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.win95-dialog-icon-info {
+  background-image: url('../images/icons/info.png');
+}
+
+.win95-dialog-icon-warning {
+  background-image: url('../images/icons/warning.png');
+}
+
+.win95-dialog-icon-error {
+  background-image: url('../images/icons/error.png');
+}
+
+.win95-dialog-icon-question {
+  background-image: url('../images/icons/question.png');
+}
+
+.win95-dialog-message {
+  flex: 1;
+}
+
+.win95-dialog-buttons {
+  display: flex;
+  justify-content: center;
+  gap: calc(var(--win95-spacing-unit) * 2);
+}
+
+/* Modal overlay */
+.win95-modal::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Alert */
+.win95-alert {
+  display: flex;
+  align-items: flex-start;
+  padding: calc(var(--win95-spacing-unit) * 2);
+  margin-bottom: calc(var(--win95-spacing-unit) * 2);
+  background-color: var(--win95-light-gray);
+  border: var(--win95-border-width) solid;
+  border-color: var(--win95-white) var(--win95-dark-gray) var(--win95-dark-gray) var(--win95-white);
+  box-shadow: 1px 1px 0 0 var(--win95-black);
+}
+
+.win95-alert-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: calc(var(--win95-spacing-unit) * 2);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.win95-alert-icon-info {
+  background-image: url('../images/icons/info-small.png');
+}
+
+.win95-alert-icon-warning {
+  background-image: url('../images/icons/warning-small.png');
+}
+
+.win95-alert-icon-error {
+  background-image: url('../images/icons/error-small.png');
+}
+
+.win95-alert-icon-success {
+  background-image: url('../images/icons/success-small.png');
+}
+
+.win95-alert-content {
+  flex: 1;
+}
+
+.win95-alert-title {
+  font-weight: bold;
+  margin-bottom: var(--win95-spacing-unit);
+}
+
+.win95-alert-close {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  margin-left: calc(var(--win95-spacing-unit) * 2);
+}
+
+/* Form elements */
+.win95-input {
+  background-color: var(--win95-white);
+  border: var(--win95-border-width) solid;
+  border-color: var(--win95-dark-gray) var(--win95-white) var(--win95-white) var(--win95-dark-gray);
+  box-shadow: inset 1px 1px 0 0 var(--win95-black);
+  padding: calc(var(--win95-spacing-unit) / 2) var(--win95-spacing-unit);
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.win95-input:focus {
+  outline: 1px dotted var(--win95-black);
+  outline-offset: -4px;
+}
+
+/* Checkbox */
+.win95-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-color: var(--win95-white);
+  border: var(--win95-border-width) solid;
+  border-color: var(--win95-dark-gray) var(--win95-white) var(--win95-white) var(--win95-dark-gray);
+  box-shadow: inset 1px 1px 0 0 var(--win95-black);
+  margin-right: var(--win95-spacing-unit);
+}
+
+.win95-checkbox.checked::after {
+  content: '✓';
+  position: absolute;
+  top: -2px;
+  left: 1px;
+  font-size: 11px;
+  color: var(--win95-black);
+}
+
+/* Radio button */
+.win95-radio {
+  position: relative;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: var(--win95-white);
+  border: var(--win95-border-width) solid;
+  border-color: var(--win95-dark-gray) var(--win95-white) var(--win95-white) var(--win95-dark-gray);
+  box-shadow: inset 1px 1px 0 0 var(--win95-black);
+  border-radius: 50%;
+  margin-right: var(--win95-spacing-unit);
+}
+
+.win95-radio.checked::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 4px;
+  height: 4px;
+  background-color: var(--win95-black);
+  border-radius: 50%;
+}
+
+/* Select */
+.win95-select {
+  position: relative;
+  display: inline-block;
+}
+
+.win95-select select {
+  appearance: none;
+  background-color: var(--win95-light-gray);
+  border: var(--win95-border-width) solid;
+  border-color: var(--win95-dark-gray) var(--win95-white) var(--win95-white) var(--win95-dark-gray);
+  box-shadow: inset 1px 1px 0 0 var(--win95-black);
+  padding: calc(var(--win95-spacing-unit) / 2) calc(var(--win95-spacing-unit) * 3) calc(var(--win95-spacing-unit) / 2) var(--win95-spacing-unit);
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.win95-select::after {
+  content: '▼';
+  position: absolute;
+  top: 50%;
+  right: var(--win95-spacing-unit);
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 8px;
+}
+
+/* Group box */
+.win95-group-box {
+  border: var(--win95-border-width) solid;
+  border-color: var(--win95-dark-gray) var(--win95-white) var(--win95-white) var(--win95-dark-gray);
+  padding: calc(var(--win95-spacing-unit) * 2);
+  margin-bottom: calc(var(--win95-spacing-unit) * 2);
+  position: relative;
+}
+
+.win95-group-box-title {
+  position: absolute;
+  top: -8px;
+  left: var(--win95-spacing-unit);
+  background-color: var(--win95-light-gray);
+  padding: 0 var(--win95-spacing-unit);
+  font-weight: bold;
+}
+
+.win95-group-box-content {
+  margin-top: var(--win95-spacing-unit);
+}
+
+/* Toolbar */
+.win95-toolbar {
+  display: flex;
+  align-items: center;
+  background-color: var(--win95-light-gray);
+  border: var(--win95-border-width) solid;
+  border-color: var(--win95-dark-gray) var(--win95-white) var(--win95-white) var(--win95-dark-gray);
+  padding: var(--win95-spacing-unit);
+  margin-bottom: calc(var(--win95-spacing-unit) * 2);
+}
+
+.win95-toolbar-buttons {
+  display: flex;
+  gap: var(--win95-spacing-unit);
+}
+
+/* Status bar */
+.win95-status-bar {
+  display: flex;
+  align-items: center;
+  background-color: var(--win95-light-gray);
+  border: var(--win95-border-width) solid;
+  border-color: var(--win95-dark-gray) var(--win95-white) var(--win95-white) var(--win95-dark-gray);
+  padding: var(--win95-spacing-unit);
+  margin-bottom: calc(var(--win95-spacing-unit) * 2);
+  font-size: var(--win95-font-size-small);
+}
+
+.win95-status-bar > * {
+  margin-right: calc(var(--win95-spacing-unit) * 2);
+}
+
+/* List */
+.win95-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: var(--win95-white);
+  border: var(--win95-border-width) solid;
+  border-color: var(--win95-dark-gray) var(--win95-white) var(--win95-white) var(--win95-dark-gray);
+  box-shadow: inset 1px 1px 0 0 var(--win95-black);
+}
+
+.win95-list li {
+  padding: var(--win95-spacing-unit);
+  border-bottom: 1px solid var(--win95-dark-gray);
+  margin: 0;
+}
+
+.win95-list li:last-child {
+  border-bottom: none;
+}
+
+.win95-list li:hover {
+  background-color: var(--win95-blue);
+  color: var(--win95-white);
+}
+
+/* Tags */
+.win95-tag {
+  display: inline-block;
+  background-color: var(--win95-light-gray);
+  border: 1px solid var(--win95-dark-gray);
+  padding: 2px 6px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  font-size: var(--win95-font-size-small);
+}
+
+/* Resize handle */
+.win95-resize-handle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  cursor: nwse-resize;
+  background-image: url('../images/icons/resize.png');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}

@@ -1,0 +1,33 @@
+{% comment %}
+Windows 95 Alert Component
+Parameters:
+- type: Alert type (info, warning, error, success)
+- title: Alert title (optional)
+- dismissible: Whether the alert can be dismissed (default: true)
+- id: Unique identifier for the alert
+{% endcomment %}
+
+{% assign alert_id = include.id | default: "win95-alert-" | append: forloop.index %}
+{% assign alert_type = include.type | default: "info" %}
+{% assign dismissible = include.dismissible | default: true %}
+
+<div id="{{ alert_id }}" class="win95-alert win95-alert-{{ alert_type }} {% if include.class %}{{ include.class }}{% endif %}">
+  <div class="win95-alert-icon win95-alert-icon-{{ alert_type }}"></div>
+  
+  <div class="win95-alert-content">
+    {% if include.title %}
+      <div class="win95-alert-title">{{ include.title }}</div>
+    {% endif %}
+    
+    <div class="win95-alert-message">
+      {{ include.content }}
+    </div>
+  </div>
+  
+  {% if dismissible %}
+    <button class="win95-alert-close" aria-label="{{ site.data.i18n[page.lang].ui.close }}" 
+            onclick="document.getElementById('{{ alert_id }}').style.display = 'none';">
+      <span>×</span>
+    </button>
+  {% endif %}
+</div>

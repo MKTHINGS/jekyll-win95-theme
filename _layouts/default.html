@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.default_lang | default: 'en' }}">
+<head>
+  {% include head.html %}
+</head>
+<body class="win95-body">
+  <div class="win95-container">
+    {% include header.html %}
+    
+    <main class="win95-main">
+      <div class="win95-window">
+        <div class="win95-window-header">
+          <div class="win95-window-title">{{ page.title | default: site.title }}</div>
+          <div class="win95-window-controls">
+            <button class="win95-btn win95-btn-minimize" aria-label="{{ site.data.i18n[page.lang].ui.minimize }}">_</button>
+            <button class="win95-btn win95-btn-maximize" aria-label="{{ site.data.i18n[page.lang].ui.maximize }}">□</button>
+            <button class="win95-btn win95-btn-close" aria-label="{{ site.data.i18n[page.lang].ui.close }}">×</button>
+          </div>
+        </div>
+        <div class="win95-window-content">
+          {{ content }}
+        </div>
+      </div>
+    </main>
+    
+    {% include footer.html %}
+  </div>
+  
+  <script src="{{ '/assets/js/win95.js' | relative_url }}"></script>
+</body>
+</html>

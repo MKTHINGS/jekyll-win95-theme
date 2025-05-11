@@ -1,0 +1,76 @@
+# Spanish translations
+locale: es
+language: Español
+language_name: Español
+
+# Site-wide translations
+site:
+  title: Windows 95 Jekyll Theme
+  description: Un tema Jekyll inspirado en la interfaz clásica de Windows 95
+  author: Tu Nombre
+
+# Navigation
+nav:
+  home: Inicio
+  about: Acerca de
+  blog: Blog
+  contact: Contacto
+
+# Common UI elements
+ui:
+  search: Buscar
+  menu: Menú
+  close: Cerrar
+  minimize: Minimizar
+  maximize: Maximizar
+  ok: Aceptar
+  cancel: Cancelar
+  apply: Aplicar
+  yes: Sí
+  no: No
+  back: Atrás
+  next: Siguiente
+  loading: Cargando...
+
+# Blog
+blog:
+  read_more: Leer más
+  posted_on: Publicado el
+  by_author: por
+  tags: Etiquetas
+  categories: Categorías
+  related_posts: Entradas Relacionadas
+  comments: Comentarios
+  newer: Más Recientes
+  older: Más Antiguos
+
+# Dates
+date:
+  format: "%d de %B de %Y"
+  months:
+    - Enero
+    - Febrero
+    - Marzo
+    - Abril
+    - Mayo
+    - Junio
+    - Julio
+    - Agosto
+    - Septiembre
+    - Octubre
+    - Noviembre
+    - Diciembre
+  days:
+    - Domingo
+    - Lunes
+    - Martes
+    - Miércoles
+    - Jueves
+    - Viernes
+    - Sábado
+
+# Error pages
+error:
+  404_title: Página No Encontrada
+  404_message: La página que estás buscando no existe.
+  404_button: Volver al Inicio

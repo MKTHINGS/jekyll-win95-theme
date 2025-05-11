@@ -1,0 +1,76 @@
+# English translations
+locale: en
+language: English
+language_name: English
+
+# Site-wide translations
+site:
+  title: Windows 95 Jekyll Theme
+  description: A Jekyll theme inspired by the classic Windows 95 UI
+  author: Your Name
+
+# Navigation
+nav:
+  home: Home
+  about: About
+  blog: Blog
+  contact: Contact
+
+# Common UI elements
+ui:
+  search: Search
+  menu: Menu
+  close: Close
+  minimize: Minimize
+  maximize: Maximize
+  ok: OK
+  cancel: Cancel
+  apply: Apply
+  yes: Yes
+  no: No
+  back: Back
+  next: Next
+  loading: Loading...
+
+# Blog
+blog:
+  read_more: Read more
+  posted_on: Posted on
+  by_author: by
+  tags: Tags
+  categories: Categories
+  related_posts: Related Posts
+  comments: Comments
+  newer: Newer
+  older: Older
+
+# Dates
+date:
+  format: "%B %d, %Y"
+  months:
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+  days:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+
+# Error pages
+error:
+  404_title: Page Not Found
+  404_message: The page you were looking for does not exist.
+  404_button: Return to Home

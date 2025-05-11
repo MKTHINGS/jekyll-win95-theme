@@ -1,0 +1,118 @@
+# Windows 95 Jekyll Theme Configuration
+# Based on the Windows 95 UI Kit by Themesberg
+
+# Site settings
+title: Windows 95 Jekyll Theme
+email: your-email@example.com
+description: >-
+  A Jekyll theme inspired by the classic Windows 95 UI, featuring multilingual support
+  for Italian, English, French, Spanish, German, and Romanian.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Theme settings
+theme_version: 1.0.0
+theme_author: Your Name
+theme_repo: https://github.com/yourusername/windows95-jekyll-theme
+
+# Windows 95 UI Kit settings
+colors:
+  window_bg: "#c0c0c0"
+  window_title_active: "#000080"
+  window_title_inactive: "#808080"
+  button_face: "#c0c0c0"
+  button_shadow: "#808080"
+  button_highlight: "#ffffff"
+  text: "#000000"
+  highlight_bg: "#000080"
+  highlight_text: "#ffffff"
+
+# Multilingual settings
+default_lang: "en"
+available_languages:
+  en:
+    label: English
+    icon: 🇬🇧
+  it:
+    label: Italiano
+    icon: 🇮🇹
+  fr:
+    label: Français
+    icon: 🇫🇷
+  es:
+    label: Español
+    icon: 🇪🇸
+  de:
+    label: Deutsch
+    icon: 🇩🇪
+  ro:
+    label: Română
+    icon: 🇷🇴
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+# Default front matter for posts
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /:categories/:year/:month/:day/:title/
+  - scope:
+      path: "_posts/en"
+    values:
+      lang: "en"
+      permalink: /blog/:year/:month/:day/:title/
+  - scope:
+      path: "_posts/it"
+    values:
+      lang: "it"
+      permalink: /it/blog/:year/:month/:day/:title/
+  - scope:
+      path: "_posts/fr"
+    values:
+      lang: "fr"
+      permalink: /fr/blog/:year/:month/:day/:title/
+  - scope:
+      path: "_posts/es"
+    values:
+      lang: "es"
+      permalink: /es/blog/:year/:month/:day/:title/
+  - scope:
+      path: "_posts/de"
+    values:
+      lang: "de"
+      permalink: /de/blog/:year/:month/:day/:title/
+  - scope:
+      path: "_posts/ro"
+    values:
+      lang: "ro"
+      permalink: /ro/blog/:year/:month/:day/:title/
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - README.md

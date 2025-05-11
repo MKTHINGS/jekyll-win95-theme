@@ -1,0 +1,57 @@
+<header class="win95-header">
+  <div class="win95-taskbar">
+    <div class="win95-start">
+      <button class="win95-start-button" id="win95-start-button">
+        <img src="{{ '/assets/images/win95-logo.png' | relative_url }}" alt="Windows 95 Logo" class="win95-logo">
+        <span>{{ site.data.i18n[page.lang].ui.menu }}</span>
+      </button>
+      
+      <div class="win95-start-menu" id="win95-start-menu">
+        <div class="win95-start-menu-header">
+          <img src="{{ '/assets/images/win95-logo.png' | relative_url }}" alt="Windows 95 Logo" class="win95-logo-large">
+          <span>{{ site.title }}</span>
+        </div>
+        <ul class="win95-menu-items">
+          <li class="win95-menu-item">
+            <a href="{{ '/' | relative_url }}" class="win95-menu-link">
+              <img src="{{ '/assets/images/home-icon.png' | relative_url }}" alt="Home" class="win95-menu-icon">
+              <span>{{ site.data.i18n[page.lang].nav.home }}</span>
+            </a>
+          </li>
+          <li class="win95-menu-item">
+            <a href="{{ '/about/' | relative_url }}" class="win95-menu-link">
+              <img src="{{ '/assets/images/about-icon.png' | relative_url }}" alt="About" class="win95-menu-icon">
+              <span>{{ site.data.i18n[page.lang].nav.about }}</span>
+            </a>
+          </li>
+          <li class="win95-menu-item">
+            <a href="{{ '/blog/' | relative_url }}" class="win95-menu-link">
+              <img src="{{ '/assets/images/blog-icon.png' | relative_url }}" alt="Blog" class="win95-menu-icon">
+              <span>{{ site.data.i18n[page.lang].nav.blog }}</span>
+            </a>
+          </li>
+          <li class="win95-menu-item">
+            <a href="{{ '/contact/' | relative_url }}" class="win95-menu-link">
+              <img src="{{ '/assets/images/contact-icon.png' | relative_url }}" alt="Contact" class="win95-menu-icon">
+              <span>{{ site.data.i18n[page.lang].nav.contact }}</span>
+            </a>
+          </li>
+          <li class="win95-menu-divider"></li>
+          <li class="win95-menu-item">
+            {% include language-selector.html %}
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="win95-taskbar-items" id="win95-taskbar-items">
+      <!-- Active windows will appear here via JavaScript -->
+    </div>
+    
+    <div class="win95-system-tray">
+      <div class="win95-clock" id="win95-clock">
+        <!-- Clock will be updated via JavaScript -->
+      </div>
+    </div>
+  </div>
+</header>

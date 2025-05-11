@@ -1,0 +1,76 @@
+# German translations
+locale: de
+language: Deutsch
+language_name: Deutsch
+
+# Site-wide translations
+site:
+  title: Windows 95 Jekyll Theme
+  description: Ein Jekyll-Theme inspiriert vom klassischen Windows 95 UI
+  author: Dein Name
+
+# Navigation
+nav:
+  home: Startseite
+  about: Über uns
+  blog: Blog
+  contact: Kontakt
+
+# Common UI elements
+ui:
+  search: Suchen
+  menu: Menü
+  close: Schließen
+  minimize: Minimieren
+  maximize: Maximieren
+  ok: OK
+  cancel: Abbrechen
+  apply: Anwenden
+  yes: Ja
+  no: Nein
+  back: Zurück
+  next: Weiter
+  loading: Wird geladen...
+
+# Blog
+blog:
+  read_more: Weiterlesen
+  posted_on: Veröffentlicht am
+  by_author: von
+  tags: Schlagwörter
+  categories: Kategorien
+  related_posts: Verwandte Beiträge
+  comments: Kommentare
+  newer: Neuere
+  older: Ältere
+
+# Dates
+date:
+  format: "%d. %B %Y"
+  months:
+    - Januar
+    - Februar
+    - März
+    - April
+    - Mai
+    - Juni
+    - Juli
+    - August
+    - September
+    - Oktober
+    - November
+    - Dezember
+  days:
+    - Sonntag
+    - Montag
+    - Dienstag
+    - Mittwoch
+    - Donnerstag
+    - Freitag
+    - Samstag
+
+# Error pages
+error:
+  404_title: Seite nicht gefunden
+  404_message: Die gesuchte Seite existiert nicht.
+  404_button: Zurück zur Startseite

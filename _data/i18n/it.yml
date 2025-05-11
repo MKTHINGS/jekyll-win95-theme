@@ -1,0 +1,76 @@
+# Italian translations
+locale: it
+language: Italiano
+language_name: Italiano
+
+# Site-wide translations
+site:
+  title: Windows 95 Jekyll Theme
+  description: Un tema Jekyll ispirato all'interfaccia classica di Windows 95
+  author: Il Tuo Nome
+
+# Navigation
+nav:
+  home: Home
+  about: Chi Siamo
+  blog: Blog
+  contact: Contatti
+
+# Common UI elements
+ui:
+  search: Cerca
+  menu: Menu
+  close: Chiudi
+  minimize: Riduci
+  maximize: Ingrandisci
+  ok: OK
+  cancel: Annulla
+  apply: Applica
+  yes: Sì
+  no: No
+  back: Indietro
+  next: Avanti
+  loading: Caricamento...
+
+# Blog
+blog:
+  read_more: Leggi di più
+  posted_on: Pubblicato il
+  by_author: da
+  tags: Tag
+  categories: Categorie
+  related_posts: Post Correlati
+  comments: Commenti
+  newer: Più Recenti
+  older: Più Vecchi
+
+# Dates
+date:
+  format: "%d %B %Y"
+  months:
+    - Gennaio
+    - Febbraio
+    - Marzo
+    - Aprile
+    - Maggio
+    - Giugno
+    - Luglio
+    - Agosto
+    - Settembre
+    - Ottobre
+    - Novembre
+    - Dicembre
+  days:
+    - Domenica
+    - Lunedì
+    - Martedì
+    - Mercoledì
+    - Giovedì
+    - Venerdì
+    - Sabato
+
+# Error pages
+error:
+  404_title: Pagina Non Trovata
+  404_message: La pagina che stai cercando non esiste.
+  404_button: Torna alla Home

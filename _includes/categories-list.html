@@ -1,0 +1,17 @@
+{% assign categories = site.posts | where: "lang", include.lang | map: "categories" | flatten | uniq | sort %}
+
+<div class="categories-list win95-group-box">
+  <div class="win95-group-box-title">{{ site.data.i18n[include.lang].blog.categories }}</div>
+  <div class="win95-group-box-content">
+    <div class="win95-toolbar">
+      {% for category in categories %}
+        {% assign category_posts = site.posts | where: "lang", include.lang | where_exp: "post", "post.categories contains category" %}
+        <a href="{{ site.baseurl }}/{% if include.lang != site.default_lang %}{{ include.lang }}/{% endif %}categories/{{ category | slugify }}/" 
+           class="win95-button win95-category-button">
+          <img src="{{ site.baseurl }}/assets/images/icons/folder.png" alt="Category" class="win95-icon">
+          {{ category }} ({{ category_posts.size }})
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>

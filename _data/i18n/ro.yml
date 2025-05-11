@@ -1,0 +1,76 @@
+# Romanian translations
+locale: ro
+language: Română
+language_name: Română
+
+# Site-wide translations
+site:
+  title: Windows 95 Jekyll Theme
+  description: O temă Jekyll inspirată de interfața clasică Windows 95
+  author: Numele Tău
+
+# Navigation
+nav:
+  home: Acasă
+  about: Despre
+  blog: Blog
+  contact: Contact
+
+# Common UI elements
+ui:
+  search: Căutare
+  menu: Meniu
+  close: Închide
+  minimize: Minimizează
+  maximize: Maximizează
+  ok: OK
+  cancel: Anulează
+  apply: Aplică
+  yes: Da
+  no: Nu
+  back: Înapoi
+  next: Înainte
+  loading: Se încarcă...
+
+# Blog
+blog:
+  read_more: Citește mai mult
+  posted_on: Publicat la
+  by_author: de
+  tags: Etichete
+  categories: Categorii
+  related_posts: Articole Similare
+  comments: Comentarii
+  newer: Mai Noi
+  older: Mai Vechi
+
+# Dates
+date:
+  format: "%d %B %Y"
+  months:
+    - Ianuarie
+    - Februarie
+    - Martie
+    - Aprilie
+    - Mai
+    - Iunie
+    - Iulie
+    - August
+    - Septembrie
+    - Octombrie
+    - Noiembrie
+    - Decembrie
+  days:
+    - Duminică
+    - Luni
+    - Marți
+    - Miercuri
+    - Joi
+    - Vineri
+    - Sâmbătă
+
+# Error pages
+error:
+  404_title: Pagina Nu a Fost Găsită
+  404_message: Pagina pe care o cauți nu există.
+  404_button: Înapoi la Pagina Principală
